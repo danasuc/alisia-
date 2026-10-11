@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PCE UNEDasiss Preparation • Medical Matters & Relative Clauses</title>
+    <style>
+        :root {
+            --bg-color: #0b1120;
+            --card-bg: #161f30;
+            --subcard-bg: #1e293b;
+            --border-color: #334155;
+            --text-main: #cbd5e1;
+            --text-bright: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent-blue: #38bdf8;
+            --accent-cyan: #22d3ee;
+            --accent-purple: #c084fc;
+            --accent-amber: #f59e0b;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 900px;
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+
+        .header-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 34px 24px;
+            text-align: center;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: rgba(56, 189, 248, 0.15);
+            color: var(--accent-blue);
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 6px 14px;
+            border-radius: 20px;
+            margin-bottom: 14px;
+            border: 1px solid rgba(56, 189, 248, 0.3);
+        }
+
+        .header-card h1 {
+            color: var(--text-bright);
+            font-size: 2.1rem;
+            margin-bottom: 8px;
+        }
+
+        .header-card p {
+            color: var(--text-muted);
+            font-size: 0.98rem;
+        }
+
+        .section-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 28px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .section-title {
+            color: var(--accent-cyan);
+            font-size: 1.35rem;
+            font-weight: 700;
+        }
+
+        .exercise {
+            background-color: var(--subcard-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .exercise-title {
+            color: var(--text-bright);
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .instruction {
+            color: var(--text-muted);
+            font-size: 0.92rem;
+            margin-bottom: 14px;
+        }
+
+        ul, ol {
+            padding-left: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        li {
+            color: var(--text-main);
+            font-size: 0.95rem;
+        }
+
+        .vocab-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        .vocab-table th, .vocab-table td {
+            text-align: left;
+            padding: 10px 14px;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 0.93rem;
+        }
+
+        .vocab-table th {
+            color: var(--accent-blue);
+            background-color: rgba(56, 189, 248, 0.08);
+            font-weight: 600;
+        }
+
+        .vocab-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .word {
+            font-weight: 600;
+            color: var(--text-bright);
+        }
+
+        .text-box {
+            background-color: #0f172a;
+            border-left: 4px solid var(--accent-blue);
+            padding: 18px;
+            border-radius: 4px;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 14px;
+        }
+
+        .text-box p {
+            margin-bottom: 12px;
+        }
+
+        .text-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        .theory-box {
+            background: rgba(192, 132, 252, 0.07);
+            border: 1px solid rgba(192, 132, 252, 0.3);
+            border-radius: 8px;
+            padding: 18px;
+            margin-bottom: 14px;
+        }
+
+        .theory-box h4 {
+            color: #d8b4fe;
+            margin-bottom: 8px;
+            font-size: 1rem;
+        }
+
+        .exam-tag {
+            display: inline-block;
+            background-color: rgba(245, 158, 11, 0.15);
+            color: var(--accent-amber);
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 3px 8px;
+            border-radius: 4px;
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            margin-bottom: 8px;
+        }
+
+        input[type="text"] {
+            background-color: #0b1120;
+            border: 1px solid var(--border-color);
+            color: #f8fafc;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            outline: none;
+        }
+
+        input[type="text"]:focus {
+            border-color: var(--accent-blue);
+        }
+
+        textarea {
+            width: 100%;
+            background-color: #0b1120;
+            border: 1px solid var(--border-color);
+            color: #f8fafc;
+            padding: 10px;
+            border-radius: 6px;
+            font-size: 0.92rem;
+            font-family: inherit;
+            outline: none;
+            resize: vertical;
+        }
+
+        textarea:focus {
+            border-color: var(--accent-blue);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="header-card">
+        <span class="badge">PCE UNEDasiss Preparation • B1-B2 Standards</span>
+        <h1>Medical Matters & Healthcare</h1>
+        <p>Medical Vocabulary & Health Idioms • Relative Pronouns & Clauses • PCE Summary & Use of English</p>
+    </div>
+
+    <!-- 1. WARM-UP -->
+    <div class="section-card">
+        <div class="section-title">1. Warm-Up</div>
+
+        <div class="exercise">
+            <div class="exercise-title">Exercise 1.1: Health & Lifestyles</div>
+            <div class="instruction">Discuss these questions with your tutor:</div>
+            <ul>
+                <li>What habits do you consider strictly essential for maintaining good physical and mental health?</li>
+                <li>When you feel slightly ill (catch a cold or have a headache), do you visit a doctor immediately or prefer home remedies and rest?</li>
+                <li>Why do you think studying and practising medicine is considered one of the most demanding careers in the world?</li>
+            </ul>
+        </div>
+
+        <div class="exercise">
+            <div class="exercise-title">Exercise 1.2: Medical Collocations</div>
+            <div class="instruction">Choose the correct word to complete the health expression:</div>
+            <ol>
+                <li>It's recommended to go to the clinic once a year for a routine (<i>check-up / workout</i>). &rarr; <input type="text" placeholder="..."></li>
+                <li>Eating fresh fruit and exercising regularly helps to maintain a (<i>balanced / heavy</i>) diet. &rarr; <input type="text" placeholder="..."></li>
+                <li>Fortunately, my grandfather has never had a single day's (<i>illness / infection</i>) in his life. &rarr; <input type="text" placeholder="..."></li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- 2. VOCABULARY -->
+    <div class="section-card">
+        <div class="section-title">2. Vocabulary: Healthcare & Medical Idioms</div>
+
+        <div class="exercise">
+            <div class="exercise-title">Core Vocabulary & Idiomatic Expressions</div>
+            <div class="instruction">Study the definitions from Unit 11:</div>
+            <table class="vocab-table">
+                <thead>
+                    <tr>
+                        <th>Word / Idiom</th>
+                        <th>Translation</th>
+                        <th>Definition / Meaning</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="word">prescribe</td>
+                        <td>выписывать (рецепт / лекарство)</td>
+                        <td>officially authorize the use of a medicine or treatment</td>
+                    </tr>
+                    <tr>
+                        <td class="word">surgery</td>
+                        <td>приемная врача / хирургическая операция</td>
+                        <td>a doctor’s consultation room OR medical operation</td>
+                    </tr>
+                    <tr>
+                        <td class="word">rushed off one's feet</td>
+                        <td>сбиваться с ног, быть очень занятым</td>
+                        <td>extremely busy and having too many tasks at once</td>
+                    </tr>
+                    <tr>
+                        <td class="word">feel off-colour</td>
+                        <td>неважно себя чувствовать</td>
+                        <td>feel slightly unwell or under the weather</td>
+                    </tr>
+                    <tr>
+                        <td class="word">get to the bottom of</td>
+                        <td>докопаться до сути, выяснить причину</td>
+                        <td>discover the real cause or truth about an issue/illness</td>
+                    </tr>
+                    <tr>
+                        <td class="word">thrown in at the deep end</td>
+                        <td>брошенный на глубину (без подготовки)</td>
+                        <td>faced with a difficult new task without preparation</td>
+                    </tr>
+                    <tr>
+                        <td class="word">taken aback</td>
+                        <td>опешивший, застигнутый врасплох</td>
+                        <td>shocked, greatly surprised by something unexpected</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Vocab Practice 1 -->
+        <div class="exercise">
+            <div class="exercise-title">Exercise 2.1: Medical Idioms in Context</div>
+            <div class="instruction">Replace the underlined phrase with the correct idiom from the table:</div>
+            <ol>
+                <li>Junior doctors in emergency wards are often <u>extremely busy with little rest</u>. &rarr; <input type="text" style="width: 70%;"></li>
+                <li>I've been <u>feeling slightly ill and tired</u> all morning, so I might stay home. &rarr; <input type="text" style="width: 70%;"></li>
+                <li>The specialist ran several tests to <u>discover the genuine cause of</u> the chronic symptoms. &rarr; <input type="text" style="width: 70%;"></li>
+                <li>On her very first day as a clinical trainee, she was <u>given complicated duties without preparation</u>. &rarr; <input type="text" style="width: 70%;"></li>
+            </ol>
+        </div>
+
+        <!-- Vocab Practice 2 -->
+        <div class="exercise">
+            <div class="exercise-title">Exercise 2.2: Healthcare Confusables (PCE Lexical Accuracy)</div>
+            <div class="instruction">Choose the accurate word: <i>[cure / heal / treat / recover]</i></div>
+            <ol>
+                <li>It took several weeks for the deep cut on his arm to ____________ completely. &rarr; <input type="text"></li>
+                <li>Doctors were able to ____________ the patient with effective antibiotics, but couldn't find a permanent ____________ for the rare disease. &rarr; <input type="text"></li>
+                <li>She stayed in bed for three days to ____________ from severe exhaustion. &rarr; <input type="text"></li>
+            </ol>
+        </div>
+
+        <!-- Vocab Practice 3 (Prefixes & Negatives) -->
+        <div class="exercise">
+            <div class="exercise-title">Exercise 2.3: Word Formation (Prefixes in Medical Contexts)</div>
+            <span class="exam-tag">PCE / Cambridge Formation</span>
+            <div class="instruction">Form a negative or opposite word using prefixes (<i>mis-, dis-, un-, in-</i>):</div>
+            <ol>
+                <li>The doctor worried that the patient's rare condition had been completely _________ . [<b>DIAGNOSED</b>] &rarr; <input type="text"></li>
+                <li>Patients often feel acute _________ when waiting hours in crowded corridors. [<b>COMFORT</b>] &rarr; <input type="text"></li>
+                <li>It is _________ for physicians to disclose confidential medical records. [<b>LEGAL</b> &rarr; <i>use il-</i>] &rarr; <input type="text"></li>
+                <li>The symptoms were totally _________ based on the initial tests. [<b>EXPECTED</b>] &rarr; <input type="text"></li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- 3. READING -->
+    <div class="section-card">
+        <div class="section-title">3. Reading: What's It Like to Study Medicine?</div>
+
+        <div class="text-box">
+            <p><strong>Dr Fred Clough recounts his experience:</strong><br>
+            Medicine isn’t quite like other university degrees. I spent the first three years studying anatomy, cell biology, and pathology (what happens when the body goes wrong). I found that I was required to memorise far more than I had had to at secondary school and put in far longer hours, especially around exam periods.</p>
+
+            <p>In my final academic year, I studied for an extra degree in Physiological Sciences. I was also able to pursue areas of interest which in my case included neuroscience, and take supplementary modules in the history of medicine. Most universities now expect you to do some academic research as well. However, I felt incredibly lucky that I had the opportunity to work in prestigious laboratories where I rubbed shoulders with Nobel Prize winners.</p>
+
+            <p>As a clinical student, in other words as a student in a teaching hospital, my timetable changed dramatically. I was expected to dress smartly, as I spent every day with real patients as a functioning part of a medical team. These included surgery, dermatology, neurology, and psychiatry. I moved to a London hospital for my clinical training, which brought many memorable and emotionally taxing experiences.</p>
+        </div>
+
+        <!-- Reading Task 1: PCE Synonyms/Antonyms -->
+        <div class="exercise">
+            <div class="exercise-title">Exercise 3.1: PCE Lexical Tasks (Part A Standard)</div>
+            <span class="exam-tag">PCE Exam Questions 1 & 2</span>
+            <div class="instruction">Find exact words in the text matching these instructions:</div>
+            <ol>
+                <li>Find in paragraph 1 one word that means the opposite (antonym) of <b>"forget"</b>: &rarr; <input type="text"></li>
+                <li>Find in paragraph 2 one word that means the same (synonym) as <b>"follow / engage in"</b> (areas of interest): &rarr; <input type="text"></li>
+                <li>Find in paragraph 3 one word meaning <b>"operating / actively working"</b> (part of a team): &rarr; <input type="text"></li>
+            </ol>
+        </div>
+
+        <!-- Reading Task 2: PCE 20-25 Word Summary -->
+        <div class="exercise">
+            <div class="exercise-title">Exercise 3.2: Text Summary (PCE Standard: 20–25 words max)</div>
+            <span class="exam-tag">PCE Part A Question 3 (2 points)</span>
+            <div class="instruction">
+                Write a concise summary of the text in <b>20–25 words</b>. 
+                <br><i>Rules: Do NOT copy verbatim sentences. Do NOT begin with "This text is about...". Focus strictly on the main ideas: the intense theoretical study and clinical training required for medical students.</i>
+            </div>
+            <textarea rows="3" placeholder="Write your summary here (count your words)..."></textarea>
+        </div>
+    </div>
+
+    <!-- 4. GRAMMAR -->
+    <div class="section-card">
+        <div class="section-title">4. Grammar: Relative Pronouns & Relative Clauses</div>
+
+        <div class="theory-box">
+            <h4>Grammar Breakdown: Defining vs. Non-Defining Relative Clauses</h4>
+            <p><strong>1. Relative Pronouns:</strong></p>
+            <p>• <b>Who / That:</b> for people (<i>The doctor <b>who / that</b> treated me was very attentive</i>).<br>
+            • <b>Which / That:</b> for things/animals (<i>The medication <b>which / that</b> was prescribed worked fast</i>).<br>
+            • <b>Whose:</b> for possession (<i>A patient <b>whose</b> test results were delayed</i>).<br>
+            • <b>Where / When:</b> for places / times (<i>The hospital <b>where</b> he trained</i>).</p>
+            <br>
+            <p><strong>2. Defining vs. Non-Defining:</strong></p>
+            <p>• <b>Defining (no commas):</b> Essential information. <i>That</i> can replace <i>who/which</i>. The pronoun can be omitted if followed by subject + verb: <i>The book (which) I read.</i><br>
+            • <b>Non-Defining (between commas):</b> Extra non-essential information. <b>NEVER use "that"</b> and <b>NEVER omit</b> the pronoun: <i>Dr Clough, <b>who</b> studied in London, is now a surgeon.</i></p>
+        </div>
+
+        <!-- Grammar Ex 1 -->
+        <div class="exercise">
+            <div class="exercise-title">Exercise 4.1: Defining vs. Non-Defining (Commas & That)</div>
+            <div class="instruction">Decide whether the clause is Defining (D) or Non-Defining (ND). Add commas where needed:</div>
+            <ol>
+                <li>My physical education teacher ________ who was an Olympic athlete ________ says daily exercise is vital. &rarr; [ <input type="text" size="4"> ]</li>
+                <li>The local clinic which is near the railway station closes at 6 pm. &rarr; [ <input type="text" size="4"> ]</li>
+                <li>Students who eat a balanced breakfast often concentrate better in morning lectures. &rarr; [ <input type="text" size="4"> ]</li>
+                <li>Frank has a brother whose wife works as a surgeon in Madrid. &rarr; [ <input type="text" size="4"> ]</li>
+            </ol>
+        </div>
+
+        <!-- Grammar Ex 2 -->
+        <div class="exercise">
+            <div class="exercise-title">Exercise 4.2: Sentence Combining</div>
+            <div class="instruction">Join the two sentences using a suitable relative pronoun (<i>who, which, whose, where</i>):</div>
+            <ol>
+                <li>The doctor examined the young patient. He looked very tired.<br>
+                &rarr; <i>The doctor ___________________________________________________________ .</i></li>
+                <li>She works at a specialist hospital. Research into neuroscience is conducted there.<br>
+                &rarr; <i>She works at a specialist hospital ____________________________________ .</i></li>
+                <li>I met a consultant yesterday. His groundbreaking article was published in The Lancet.<br>
+                &rarr; <i>Yesterday I met a consultant _________________________________________ .</i></li>
+            </ol>
+        </div>
+
+        <!-- Grammar Ex 3: PCE Multiple Choice (Part B Standard) -->
+        <div class="exercise">
+            <div class="exercise-title">Exercise 4.3: PCE Use of English (Part B Multiple Choice)</div>
+            <span class="exam-tag">PCE Part B Format</span>
+            <div class="instruction">Choose the correct option (a, b, or c):</div>
+            <ol>
+                <li>The senior nurse, ________ was in charge of the ward, answered all our inquiries.<br>
+                    <b>a)</b> that &nbsp;&nbsp;&nbsp; <b>b)</b> who &nbsp;&nbsp;&nbsp; <b>c)</b> which &rarr; [ <input type="text" size="3"> ]
+                </li>
+                <li>The new hospital was ________ by a famous Spanish architect.<br>
+                    <b>a)</b> designed &nbsp;&nbsp;&nbsp; <b>b)</b> designing &nbsp;&nbsp;&nbsp; <b>c)</b> was designed &rarr; [ <input type="text" size="3"> ]
+                </li>
+                <li>The medication made him ________ much more relaxed within an hour.<br>
+                    <b>a)</b> to feel &nbsp;&nbsp;&nbsp; <b>b)</b> feel &nbsp;&nbsp;&nbsp; <b>c)</b> feeling &rarr; [ <input type="text" size="3"> ]
+                </li>
+                <li>He took a short medical leave ________ he could recover fully from the surgery.<br>
+                    <b>a)</b> because of &nbsp;&nbsp;&nbsp; <b>b)</b> so that &nbsp;&nbsp;&nbsp; <b>c)</b> such that &rarr; [ <input type="text" size="3"> ]
+                </li>
+            </ol>
+        </div>
+
+        <!-- Grammar Ex 4 -->
+        <div class="exercise">
+            <div class="exercise-title">Exercise 4.4: Error Correction</div>
+            <div class="instruction">Find and correct one grammatical mistake with relative clauses in each line:</div>
+            <ol>
+                <li>The hospital that my mother works there has modern medical facilities. &rarr; <input type="text" style="width: 80%;"></li>
+                <li>Dr Evans, that is a specialist in dermatology, gave a fascinating lecture. &rarr; <input type="text" style="width: 80%;"></li>
+                <li>She is a researcher which work focuses on infectious illnesses. &rarr; <input type="text" style="width: 80%;"></li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- 5. SPEAKING -->
+    <div class="section-card">
+        <div class="section-title">5. Speaking (Oral Presentation & Debate)</div>
+
+        <div class="exercise">
+            <div class="exercise-title">Task 5.1: The Ethics & Pressure of Modern Healthcare</div>
+            <div class="instruction">Discuss with your tutor:</div>
+            <ul>
+                <li>Dr Clough describes working alongside Nobel Prize winners while handling severe emergencies. Do you think doctors should be allowed to work 24-hour shifts, or does extreme fatigue put patients in danger?</li>
+                <li>In your opinion, what qualities make a truly good doctor: academic expertise or empathy and communication skills?</li>
+            </ul>
+        </div>
+
+        <div class="exercise">
+            <div class="exercise-title">Task 5.2: PCE Essay Topic Debate (Part C Simulation)</div>
+            <div class="instruction">Take 1 minute to structure your thoughts, then defend your opinion for 2 minutes:</div>
+            <ul>
+                <li><i>"Modern technological lifestyles (screen time, desk jobs, processed food) seriously endanger human health, and governments should impose strict regulations on junk food advertising."</i></li>
+                <li>State your clear thesis, provide two distinct arguments with examples, and address a counter-argument using complex linking words (<i>whereas, although, consequently, furthermore</i>).</li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
